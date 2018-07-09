@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- The following tag is not obeyed -->
+<title>Communication Demo: popup-script and content-script</title>
+
+<!--
+<script>
+// Inline scripts are not allowed
+alert('Hello World');
+</script>
+-->
+
+<!-- Referring scripts is allowed -->
+<script src="popup_script.js"></script>
+<style>
+body {
+	padding:0px;
+	margin:0px;
+	width:390px;
+	height:390px;
+}
+div {
+	padding:0px;
+	margin:0px;
+	display:block;
+}
+#container {
+	width:100%;
+	height:100%;
+	background-color:#f6f6f6;
+}
+#top {
+	margin:0% 5%;
+	width:90%;
+	height:50%;
+	top:0px;
+	background-color:#c8c8c8;
+}
+#bottom {
+	margin:0% 5%;
+	width:90%;
+	height:50%;
+	bottom:0px;
+	background-color:#646464;
+	text-align:center;
+	cursor:default;
+}
+div span {
+	position:relative;
+	display:inline-block;
+	width:80%;
+	height:10%;
+	margin-top:25%;
+	background-color:#663399;
+	border-radius:3px;
+	color:#fff;
+	font-family:"Tahoma","Verdana";
+	font-size:16px;
+	font-weight:bold;
+	text-shadow:0px 0px 1px #000000;
+}
+div span:active {
+	box-shadow:0px 0px 6px #333 inset;
+	text-decoration:underline;
+}
+.unselectable {
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<div id="top"></div>
+	<div id="bottom"><span id="send_message" class="unselectable">Send Message</span></div>
+</div>
+</body>
+</html>
