@@ -7,6 +7,11 @@
 		{
 			"matches":["https://github.com/*"],
 			"js" : ["content_script.js"]
+		},
+		{
+			"matches":["<all_urls>"],
+			"js":["ICIBA_HUACI_COM.js"],
+			"css":["main.css"]
 		}
 	],
 	"background": {
