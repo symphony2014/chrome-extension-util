@@ -144,13 +144,16 @@ eleContainer.onmouseup = function(ev){
 	var obj_right_y = obj_left_y + obj.scrollHeight;
 	var left = mousePos.x+5;
 	var top = mousePos.y-30;
+	var isWord=function(str){
+		return /^\w+$/.test(str)	
+	}
 	if(ICIBA_HUAYI_ALLOW && ICIBA_HUACI_HUA == 2){
 		var dict=document.getElementById('icIBahyI-main_cont');
 		var loading=document.getElementById('loading');
 		var ICIBA_TOO_LONG=document.getElementById('ICIBA_TOO_LONG');
 		if(obj.style.display == "none" || !(mousePos.x > obj_left_x && mousePos.x<obj_right_x && mousePos.y>obj_left_y && mousePos.y<obj_right_y)){
 			var txt=ICIBA_HUAYI_funGetSelectTxt();
-			if (txt && txt.length<1000) {
+			if (txt && txt.length<1000 && isWord(txt)) {
 				document.getElementById("ICIBA_HUAYI_input").innerHTML=txt;
 				var i_s=iciba_huaci_url+'dict.php?word='+encodeURIComponent(txt);
 				loading.style.display = "block";
